@@ -1,0 +1,105 @@
+function uint add [uint a, uint b]
+{
+	declare uint sum = a + b;
+	sum = sum * 2 % 5;
+	return [sum];
+}
+
+procedure loopshow [uint n]
+{
+	declare uint i = 0;
+	while [i < n]
+	{
+		write [i]; break;
+		i = i + 1;
+	}
+	break;
+}
+
+main
+{
+	declare uint dec = 100;
+	declare uint hexv = 0x2A;
+	declare char letter = "A";
+	declare string text = "Hi";
+        declare bool flag = true;
+
+	declare string linked = combine [text, "there "];
+	write [linked]; break;
+
+	declare uint len = measure [linked];
+	write [len]; break;
+
+	declare uint randv = randomize [1, 5];
+	write [randv]; break;
+
+	declare uint powv = exponent [2, 4];
+	write [powv]; break;
+        
+        declare uint sq = sqrt [25];
+	write [sq]; break;
+	
+	declare uint cmp = lexcomp ["abc", "abd"];
+	write [cmp]; break;
+
+	if [powv ~ 16]
+	{
+		write ["== works"]; break;
+	}
+	else
+	{
+		write ["== fail"]; break;
+	}
+
+	if [dec ? hexv]
+	{
+		write [">= works"]; break;
+	}
+
+	if [randv $ 3]
+	{
+		write ["<= works"]; break;
+	}
+
+	if [dec > hexv]
+	{
+		write ["> works"]; break;
+	}
+
+	if [hexv < dec]
+	{
+		write ["< works"]; break;
+	}
+
+	if [dec # powv]
+	{
+		write ["!= works"]; break;
+	}
+
+	switch [dec]
+	{
+		case [101]
+		{
+			write ["switch case hit"]; break;
+		}
+		case [102]
+		{
+			write ["other case"]; break;
+		}
+		default
+		{
+			write ["switch default"]; break;
+		}
+	};
+
+	declare uint res = add[dec, hexv];
+	write [res]; break;
+
+	loopshow[3];
+
+	dec = dec - 1;
+	if [dec ~ 41]
+	{
+		write ["assignment ok"]; break;
+	}
+}

@@ -1,0 +1,5 @@
+﻿  Lib.cpp
+D:\AAP-2025Compiler-main\AAP-2025\AAP-2025\Lib\Lib.cpp(17,13): warning C4244: return: преобразование "double" в "int", возможна потеря данных
+  pch.cpp
+  Создание кода...
+  Lib.vcxproj -> D:\AAP-2025Compiler-main\AAP-2025\AAP-2025\Debug\Lib.lib
